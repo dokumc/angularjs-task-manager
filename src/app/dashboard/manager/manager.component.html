@@ -1,0 +1,89 @@
+<div  *ngIf="aedit"  class="row">
+    <br>
+   
+     
+
+            <div class="col-md-12">
+                <!--<ba-card title="Bonus Types" baCardClass="table-panel">-->
+                <div class="responsive">
+                    <table class="table  table-striped" style="text-align: left">
+                        <thead>
+                            <tr>
+                                <th class="table-id"># </th>
+                                <th>Project</th>
+                                <th>Task</th>
+                                <th>Employee</th>
+                                <th>Estimated Time</th>
+                                <th>Worked Time</th>
+                                <th>Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr *ngFor="let item of tableData; let i = index ">
+                                <td>{{ i+1 }}</td>
+                                <td>{{ item.name}}</td>
+                                <td>
+                                    <button (click)="setItem(item)" ngClass="{status-button btn btn-xs btn-primary">
+                                                <i class="ion-edit"></i>
+                                            </button>
+
+                                    <button (click)="deleteItem(item)" ngClass="{status-button btn btn-xs btn-danger"> <i class="ion-trash-b"></i>
+                                            </button>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <!--</ba-card>-->
+            </div>
+
+</div>
+<!-- <div  class="row">
+    <br>
+    <form [formGroup]="myForm">
+        <div formArrayName="unitNPosition">
+            <div *ngFor="let unit of myForm.get('unitNPosition').controls; let i=index" [formGroup]="unit">
+                <div class="row">
+                    <div class="col-md-3" style="margin: 10px 0">
+                        <label class="form-control-label" style="margin-left:10px">Employee</label>
+                        <input auto-complete class="form-control" [source]="mySource" />
+                        <input style="display:none" class="form-control" type="text" #posInput id="{{i}}" formControlName="employee">
+                    </div>
+
+                    <div class="col-md-1" style="margin-top: 33px">
+                        <button type="button" class="btn btn-primary btn-icon" (click)="myForm.get('unitNPosition').removeAt(i)"><i class="fa fa-minus"></i></button>
+                    </div>
+                    <div class="col-md-1" style="margin-top: 33px">
+                        <button type="button" class="btn btn-primary btn-icon" *ngIf="i == 0" (click)="myForm.get('unitNPosition').push(buildUnit(''))"><i class="fa fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Duration of Task</label><br>
+            <my-date-range-picker name="mydaterange" [options]="myDateRangePickerOptions" (dateRangeChanged)="onDateRangeChanged($event)"
+                required></my-date-range-picker>
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+</div> -->
+
+ <div class="row">
+    <form class="col-md-6" [formGroup]="myForm">
+        <h3>New Task</h3>
+        <br>
+        <div class="form-group">
+            <label>Name</label>
+            <input type="text" class="form-control" placeholder="Name" formControlName="title">
+        </div>
+        <div  class="form-group">
+            <label>Duration of Task</label><br>
+             <my-date-range-picker name="mydaterange" [options]="myDateRangePickerOptions"   (dateRangeChanged)="onDateRangeChanged($event)" required></my-date-range-picker>
+        </div>
+         <div class="form-group">
+            <label>Assign Employee</label><br>
+           <input auto-complete class="form-control" [source]="mySource" />  </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+       <pre><code>{{ myForm?.value | json }}</code></pre> 
+    </form>
+</div> 
