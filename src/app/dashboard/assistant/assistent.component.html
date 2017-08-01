@@ -1,4 +1,46 @@
-<div class="row">
+
+<div  *ngIf="aedit" class="row">
+    <br>
+   
+     
+
+            <div class="col-md-12">
+                <!--<ba-card title="Bonus Types" baCardClass="table-panel">-->
+                <div class="responsive">
+                    <table class="table  table-striped" style="text-align: left">
+                        <thead>
+                            <tr>
+                                <th class="table-id"># </th>
+                                <th>Project</th>
+                                <th>Manager</th>
+                                <th>Estimated Time</th>
+                                <th>Worked Time</th>
+                                <th>Progress</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- <tr *ngFor="let item of tableData; let i = index ">
+                                <td>{{ i+1 }}</td>
+                                <td>{{ item.name}}</td>
+                                <td>
+                                    <button (click)="setItem(item)" ngClass="{status-button btn btn-xs btn-primary">
+                                                <i class="ion-edit"></i>
+                                            </button>
+
+                                    <button (click)="deleteItem(item)" ngClass="{status-button btn btn-xs btn-danger"> <i class="ion-trash-b"></i>
+                                            </button>
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+                <!--</ba-card>-->
+            </div>
+
+</div>
+
+
+<div  *ngIf="fedit" class="row">
     <form class="col-md-6" [formGroup]="myForm">
         <h3>New Project</h3>
         <br>

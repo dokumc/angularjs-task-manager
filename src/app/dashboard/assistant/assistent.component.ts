@@ -12,6 +12,10 @@ import { CustomDateTime } from './custom-datetime.pipe';
 // tslint:disable-next-line:one-line
 // tslint:disable-next-line:component-class-suffix
 export class Assistent implements OnInit {
+
+  private aedit: boolean;
+  private fedit: boolean;
+
   private array: string[] = [];
   public manager = {};
   private myFilter;
@@ -33,6 +37,8 @@ export class Assistent implements OnInit {
         })
       })
     });
+    this.aedit = false;
+    this.fedit=true;
   }
   private myDateRangePickerOptions: IMyDrpOptions = {
     dateFormat: 'dd/mm/yyyy',
